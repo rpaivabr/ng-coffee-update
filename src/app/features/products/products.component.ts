@@ -12,8 +12,8 @@ import { CardComponent } from '../../shared/components/card/card.component';
   styleUrl: './products.component.scss'
 })
 export default class ProductsComponent implements OnInit {
-  private productsService = inject(ProductsService);
-  private cartService = inject(CartService);
+  private readonly productsService = inject(ProductsService);
+  private readonly cartService = inject(CartService);
 
   products!: Product[];
 

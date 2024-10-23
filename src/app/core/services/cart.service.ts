@@ -9,7 +9,7 @@ import { Product } from '../models/product';
 export class CartService {
   // private cartItemsSubject = new BehaviorSubject<CartItem[]>([]);
   // totalCartItems$ = this.cartItems$.pipe(map(items => items.reduce((sum, item) => sum + item.amount, 0)))
-  private cartItemsSignal = signal<CartItem[]>([]);
+  private readonly cartItemsSignal = signal<CartItem[]>([]);
   cartItems = this.cartItemsSignal.asReadonly();
   totalCartitems = computed(() => this.cartItems().reduce((sum, item) => sum + item.amount, 0))
 

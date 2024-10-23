@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from '../../services/cart.service';
+
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { CartService } from '../../../core/services/cart.service';
 
 @Component({
   selector: 'app-header',

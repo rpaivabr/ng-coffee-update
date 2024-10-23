@@ -4,7 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { CoreModule } from './core/core.module';
+import { provideHttpClient } from '@angular/common/http';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,9 +14,10 @@ import { CoreModule } from './core/core.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule,
+    SharedModule,
   ],
   providers: [
+    provideHttpClient(),
     provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]

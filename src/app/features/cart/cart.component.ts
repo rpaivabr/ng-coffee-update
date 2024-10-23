@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from '../../services/cart.service';
 import { map, Observable } from 'rxjs';
-import { CartItem } from '../../models/cart';
-import { Product } from '../../models/product';
+import { CartItem } from '../../core/models/cart';
+import { CartService } from '../../core/services/cart.service';
+import { Product } from '../../core/models/product';
 
 @Component({
   selector: 'app-cart',
@@ -11,7 +11,6 @@ import { Product } from '../../models/product';
 })
 export class CartComponent implements OnInit {
   cartItems$!: Observable<CartItem[]>;
-  // products$ = this.cartItems$.pipe(map(items => items.map(item => item.product)));
 
   constructor(private cartService: CartService) { }
 

@@ -4,8 +4,17 @@ import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { CartService } from '../../../core/services/cart.service';
 
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatBadgeModule } from '@angular/material/badge';
+
+import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-header',
+  standalone: true,
+  imports: [CommonModule, MatButtonModule, MatIconModule, MatToolbarModule, MatBadgeModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })

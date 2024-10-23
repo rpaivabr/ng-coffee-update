@@ -5,8 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/products' },
-  { path: 'products', loadChildren: () => import('./features/products/products.module').then(m => m.ProductsModule) },
-  { path: 'cart', loadChildren: () => import('./features/cart/cart.module').then(m => m.CartModule) },
+  { path: 'products', loadComponent: () => import('./features/products/products.component') },
+  { path: 'cart', loadComponent: () => import('./features/cart/cart.component') },
 ];
 
 @NgModule({

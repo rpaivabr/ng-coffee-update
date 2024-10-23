@@ -1,24 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ProductsService } from '../../core/services/products.service';
 import { CartService } from '../../core/services/cart.service';
 import { Product } from '../../core/models/product';
 import { CardComponent } from '../../shared/components/card/card.component';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CardComponent, CommonModule],
+  imports: [CardComponent],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss'
 })
 export default class ProductsComponent implements OnInit {
-  products!: Product[];
+  private productsService = inject(ProductsService);
+  private cartService = inject(CartService);
 
-  constructor(
-    private productsService: ProductsService,
-    private cartService: CartService
-  ) { }
+  products!: Product[];
 
   ngOnInit(): void {
     this.productsService.getProducts().subscribe(products => {

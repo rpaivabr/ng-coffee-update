@@ -1,7 +1,7 @@
 <!-- <p>cart works!</p> -->
 
 <div class="product-list">
-  <app-card *ngFor="let item of cartItems$ | async" 
+  <app-card *ngFor="let item of cartItems()" 
     [product]="item.product" 
     [label]="'Remove from cart'"
     (add)="removeItem(item.product)" />

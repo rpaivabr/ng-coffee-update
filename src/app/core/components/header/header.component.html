@@ -1,0 +1,19 @@
+<!-- <p>header works!</p> -->
+
+<mat-toolbar>
+  <div class="container">
+    <span (click)="navigate('/products')">NgCoffee</span>
+    <span class="spacer"></span>
+    <ng-container *ngIf="(totalCartItems$ | async) as totalCartItems; else empty">
+      <button mat-icon-button [matBadge]="totalCartItems" (click)="navigate('/cart')" aria-label="icon-button with shopping cat icon">
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
+    </ng-container>
+    <ng-template #empty>
+      <button mat-icon-button aria-label="icon-button with shopping cat icon">
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
+    </ng-template>
+  </div>
+</mat-toolbar>
+

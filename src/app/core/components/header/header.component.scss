@@ -1,0 +1,17 @@
+mat-toolbar {
+  background: #d7e3ff;
+
+  .container {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+}
+

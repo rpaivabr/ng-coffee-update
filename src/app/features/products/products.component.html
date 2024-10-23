@@ -1,10 +1,11 @@
-<!-- <p>products works!</p> -->
-
 <div class="product-list">
-  <ng-container *ngIf="products; else loading">
-    <ng-container *ngIf="products.length; else empty"></ng-container>
-  </ng-container>
-  <app-card *ngFor="let product of products" [product]="product" (add)="addItem(product)" />
-  <ng-template #loading>Carregando...</ng-template>
-  <ng-template #empty>Não há items :/</ng-template>
+  @if (products) {
+    @for (product of products; track product.id) {
+      <app-card [product]="product" (add)="addItem(product)" />
+    } @empty {
+      <span>Não há items :/</span>
+    }
+  } @else {
+    <span>Carregando...</span>
+  }
 </div>
